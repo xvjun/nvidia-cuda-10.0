@@ -4,7 +4,7 @@ RUN rm -f /etc/apt/sources.list.d/cuda.list /etc/apt/sources.list.d/nvidia-ml.li
 COPY ./sources.list /etc/apt/sources.list
 
 # Install Python
-RUN apt-get update
+RUN apt-get update \
   && apt-get install -y --no-install-recommends \
   build-essential \
   curl wget vim nano tzdata \
