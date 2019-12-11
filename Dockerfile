@@ -1,7 +1,7 @@
 FROM nvidia/cuda:10.0-cudnn7-runtime-ubuntu16.04
 
 RUN rm -f /etc/apt/sources.list.d/cuda.list /etc/apt/sources.list.d/nvidia-ml.list
-#COPY ./sources.list /etc/apt/sources.list
+COPY ./sources.list /etc/apt/sources.list
 
 # Install Python
 RUN apt-get update \
@@ -9,10 +9,12 @@ RUN apt-get update \
   build-essential \
   curl wget vim nano tzdata \
   software-properties-common \
+  python3.6 \
+  python3.6-dev \
   python3-pip 
-RUN add-apt-repository -y ppa:jonathonf/python-3.6 
-RUN apt-get update 
-RUN apt-get install -y python3.6 python3.6-dev 
+#RUN add-apt-repository -y ppa:jonathonf/python-3.6 
+#RUN apt-get update 
+#RUN apt-get install -y python3.6 python3.6-dev 
 RUN apt-get install -y libsm6 libxrender1 libxext-dev
 #  && apt-get clean \
 #  && rm -rf /var/lib/apt/lists/*
