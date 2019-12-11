@@ -9,7 +9,7 @@ RUN apt-get update \
   build-essential \
   curl wget vim nano tzdata \
   software-properties-common \
-  python3 \
+  python=3.6 \
   python3-pip 
 #RUN add-apt-repository -y ppa:jonathonf/python-3.6 
 #RUN apt-get update 
